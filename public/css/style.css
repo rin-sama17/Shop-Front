@@ -1,0 +1,38 @@
+@font-face {
+  font-family: 'msi';
+  src: url('../fonts/Vazir.eot') format('eot');
+  src: url('../fonts/Vazir.ttf') format('truetype'),
+    url('../fonts/Vazir.woff') format('woff');
+}
+
+* {
+  font-family: 'msi' !important;
+}
+
+body {
+  direction: rtl;
+  text-align: right;
+  font-family: 'msi';
+  margin: 0;
+  padding: 0;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
