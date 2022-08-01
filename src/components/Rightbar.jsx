@@ -1,4 +1,4 @@
-import { Typography } from '@material-ui/core'
+import { ListItemIcon, ListItemText, Typography } from '@material-ui/core'
 
 import AccountCircleIcon from '@material-ui/icons/AccountCircle'
 import PeopleAltIcon from '@material-ui/icons/PeopleAlt'
@@ -51,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: '500',
   },
   icon: {
-    marginLeft: theme.spacing(1),
+    minWidth: '30px',
   },
   container: {
     paddingTop: 10,
@@ -71,6 +71,9 @@ const useStyles = makeStyles((theme) => ({
       margin: 6,
       width: '100%',
     },
+  },
+  text: {
+    textAlign: 'right',
   },
 }))
 
@@ -98,68 +101,58 @@ export default function TemporaryDrawer() {
       onClick={toggleDrawer(false)}
       onKeyDown={toggleDrawer(false)}
     >
-      <Typography>فروشگاه من</Typography>
+      <Typography variant="h5">فروشگاه من</Typography>
       <Divider />
       <List>
-        <ListItem className={classes.root}>
-          <Button color="primary">
+        <ListItem button>
+          <ListItemIcon className={classes.icon}>
             <Home />
-            خانه
-          </Button>
+          </ListItemIcon>
+          <ListItemText className={classes.text} primary="خانه" />
         </ListItem>
-      </List>
-      <List>
-        <ListItem className={classes.root}>
-          <Button color="primary">
+        <ListItem button>
+          <ListItemIcon className={classes.icon}>
             <AccountCircleIcon />
-            اکانت من
-          </Button>
+          </ListItemIcon>
+          <ListItemText className={classes.text} primary="اکانت من" />
         </ListItem>
-      </List>
-      <List>
-        <ListItem className={classes.root}>
-          <Button color="primary" icon>
+
+        <ListItem button>
+          <ListItemIcon className={classes.icon}>
             <WhatshotIcon />
-            پرطرفدار ها
-          </Button>
+          </ListItemIcon>
+          <ListItemText className={classes.text} primary="پرطرفدار ها" />
         </ListItem>
-      </List>
-      <List>
-        <ListItem className={classes.root}>
-          <Button color="primary">
+
+        <ListItem button>
+          <ListItemIcon className={classes.icon}>
             <BookmarkIcon />
-            علامت شده ها
-          </Button>
+          </ListItemIcon>
+          <ListItemText className={classes.text} primary=" علامت شده ها" />
         </ListItem>
-      </List>
-      <List>
-        <ListItem className={classes.root}>
-          <Button color="primary">
+
+        <ListItem button>
+          <ListItemIcon className={classes.icon}>
             <Home />
-            دسته بندی ها
-          </Button>
+          </ListItemIcon>
+          <ListItemText className={classes.text} primary="دسته بندی ها" />
         </ListItem>
       </List>
 
       <Divider />
       <List>
-        <ListItem className={classes.root}>
-          <Button color="primary">
+        <ListItem button>
+          <ListItemIcon className={classes.icon}>
             <HelpOutlineIcon />
-            سوالات متداول
-          </Button>
+          </ListItemIcon>
+          <ListItemText className={classes.text} primary="سوالات متداول" />
         </ListItem>
-        <ListItem className={classes.root}>
-          <Button color="primary">
+
+        <ListItem button>
+          <ListItemIcon className={classes.icon}>
             <PeopleAltIcon />
-            درباره ما
-          </Button>
-        </ListItem>
-        <ListItem className={classes.root}>
-          <Button color="primary">
-            <WhatshotIcon />
-            پرطرفدار ها
-          </Button>
+          </ListItemIcon>
+          <ListItemText className={classes.text} primary="درباره ما" />
         </ListItem>
       </List>
     </div>

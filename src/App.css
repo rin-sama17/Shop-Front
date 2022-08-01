@@ -1,3 +1,6 @@
+.main {
+  height: 90vh;
+}
 .navAnimation {
   animation: navbar-down 0.5s ease 0.1s;
   animation-fill-mode: forwards;

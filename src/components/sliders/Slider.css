@@ -21,10 +21,6 @@
   transition: all 0.5s ease;
 }
 
-.slide img {
-  height: 100%;
-}
-
 .current {
   opacity: 1;
   transform: translateX(0);
@@ -96,7 +92,7 @@
   transform: translateX(0);
 }
 .image {
-  height: auto;
+  height: 100%;
   width: auto;
 }
 
@@ -109,6 +105,7 @@ hr {
 @media screen and (max-width: 600px) {
   .slider {
     margin-top: 56px;
+    height: 127%;
   }
   .content {
     padding-top: 0;

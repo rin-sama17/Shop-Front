@@ -1,9 +1,5 @@
-/* @import 'https://unpkg.com/open-props';
-@import 'https://unpkg.com/open-props/normalize.min.css'; */
-
 .media-scroller {
-  --_spacer: var(--size-3);
-
+  cursor: grab;
   display: grid;
   gap: 1rem;
   grid-auto-flow: column;
@@ -41,7 +37,6 @@
 
 .snaps-inline {
   scroll-snap-type: inline mandatory;
-  scroll-padding-inline: var(--_spacer, 1rem);
 }
 
 .snaps-inline > * {
@@ -57,28 +52,6 @@
 
 .flow {
   display: grid;
-  gap: var(--size-3);
-}
-
-.page-header {
-  padding-block: var(--size-9);
-  margin-block-end: var(--size-9);
-  background: var(--gradient-16);
-  color: var(--gray-0);
-  box-shadow: var(--shadow-2);
-}
-
-.page-title {
-  font-size: var(--font-size-fluid-3);
-}
-
-.page-subtitle {
-  font-size: var(--font-size-fluid-1);
-}
-
-.section-title {
-  padding-inline-start: var(--size-6);
-  margin-block: var(--size-9) var(--size-3);
 }
 
 .ActionArea {
@@ -87,7 +60,7 @@
 
 @media screen and (max-width: 950px) {
   .media-scroller {
-    padding: 0و;
+    padding: 0;
     grid-auto-columns: 31%;
   }
 }
