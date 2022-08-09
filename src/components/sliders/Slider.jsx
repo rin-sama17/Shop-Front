@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react'
-import { sliderData } from './sliderData'
+// import { sliderData } from './sliderData'
 import './Slider.css'
-import { Button } from '@material-ui/core'
+import { Button, Card } from '@material-ui/core'
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore'
 import NavigateNextIcon from '@material-ui/icons/NavigateNext'
+import { Link } from 'react-router-dom'
 
-const Slider = () => {
+const SliderSm = ({ sliders }) => {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [sliderData, setSliderData] = useState([])
 
   const slideLength = sliderData.length
 
@@ -27,6 +29,7 @@ const Slider = () => {
   }
 
   useEffect(() => {
+    setSliderData(sliders)
     setCurrentSlide(0)
   }, [])
 
@@ -36,38 +39,45 @@ const Slider = () => {
     }
     return () => clearInterval(slideInterval)
   }, [currentSlide])
-
   return (
-    <div id="parent" className="slider">
-      <div id="child">
-        <NavigateBeforeIcon className="arrow prev" onClick={prevSlide} />
-        <NavigateNextIcon className="arrow next" onClick={nextSlide} />
-        {sliderData.map((slide, index) => {
-          return (
-            <div
-              className={index === currentSlide ? 'slide current' : 'slide'}
-              key={slide.id}
-            >
-              {index === currentSlide && (
-                <div>
-                  <img src={slide.image} alt="slide" />
-                  <div className="content">
-                    <h2>{slide.heading}</h2>
-                    <p>{slide.desc}</p>
-                    <hr />
-                    <Button>اطلاعات بیشتر</Button>
-                  </div>
+    <>
+      {sliderData.map((slide, index) => {
+        return (
+          <div
+            className={index === currentSlide ? 'slide current' : 'slide'}
+            key={slide.id}
+          >
+            <div className="slideshow-container">
+              <div className="mySlides fade">
+                <div className="numbertext">
+                  {`${slideLength}/${currentSlide + 1}`}
                 </div>
-              )}
+                <Link to={slide.link}>
+                  <img alt="" src={slide.image} className="sliderImage" />
+                </Link>
+              </div>
+              <div className="dotDiv">
+                <NavigateNextIcon className="next" onClick={prevSlide} />
+
+                {sliderData.map((slide, index) => {
+                  return (
+                    <span
+                      key={slide.id}
+                      className={
+                        index === currentSlide ? 'dot dotActive' : 'dot'
+                      }
+                      onClick={() => setCurrentSlide(index)}
+                    ></span>
+                  )
+                })}
+                <NavigateBeforeIcon className="prev " onClick={nextSlide} />
+              </div>
             </div>
-          )
-        })}
-        <Button className="counter" variant="contained">
-          {`${slideLength}/${currentSlide + 1}`}
-        </Button>
-      </div>
-    </div>
+          </div>
+        )
+      })}
+    </>
   )
 }
 
-export default Slider
+export default SliderSm

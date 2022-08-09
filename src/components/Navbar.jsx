@@ -18,6 +18,9 @@ import Rightbar from './Rightbar'
 import '../App.css'
 
 const useStyles = makeStyles((theme) => ({
+  appbar: {
+    position: 'sticky',
+  },
   toolbar: {
     display: 'flex',
     justifyContent: 'space-between',
@@ -86,7 +89,7 @@ function Navabr() {
   const [open, setOpen] = useState(false)
   const classes = useStyles({ open })
   return (
-    <AppBar className="navAnimation">
+    <AppBar className={classes.appbar}>
       <Toolbar className={classes.toolbar}>
         <div>
           <Typography variant="h6" className={classes.logoLg}>

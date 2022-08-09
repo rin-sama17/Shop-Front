@@ -1,10 +1,10 @@
 import { Typography } from '@material-ui/core'
-import Commodity from './Commodity'
+import Product from './Product'
 import './horizontalSlider.css'
-import { commoditiesData } from './commoditiesData'
-import { useRef } from 'react'
+import { productData } from './productData'
+import { useEffect, useRef } from 'react'
 
-function HorizontalSlider() {
+function Feed() {
   let isDown = false
   let startX
   let scrollLeft
@@ -43,12 +43,12 @@ function HorizontalSlider() {
         onMouseUp={whenmouseup}
         onMouseMove={whenmousemove}
       >
-        {commoditiesData.map((p) => (
-          <Commodity key={p.id} commodity={p} className={`item item${p.id}`} />
+        {productData.map((p) => (
+          <Product key={p.id} product={p} className={`item item${p.id}`} />
         ))}
       </div>
     </div>
   )
 }
 
-export default HorizontalSlider
+export default Feed

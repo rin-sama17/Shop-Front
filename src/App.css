@@ -1,5 +1,6 @@
 .main {
   height: 90vh;
+  margin-top: 64px;
 }
 .navAnimation {
   animation: navbar-down 0.5s ease 0.1s;
